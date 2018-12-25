@@ -69,12 +69,8 @@ class CodeExampleViewController: UIViewController {
                 return
         }
 
-        do {
-            if let image = try FolioReader.getCoverImage(bookPath) {
+        if let image = try? FolioReader.getCoverImage(bookPath) {
                 button?.setBackgroundImage(image, for: .normal)
-            }
-        } catch {
-            print(error.localizedDescription)
         }
     }
 }
